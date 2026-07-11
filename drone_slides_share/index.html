@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宇宙クラブ — 学生が0から創る、日本初の屋内ドローンショー</title>
+  <meta name="description" content="東京理科大学 創域理工学部 宇宙クラブ — 国際ドローン展 スポンサーシップ資料">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #0a0e1a;
+      --color-surface: rgba(15, 23, 42, 0.85);
+      --color-accent-1: #3b82f6;
+      --color-accent-2: #8b5cf6;
+      --color-accent-3: #06b6d4;
+      --color-text: #e2e8f0;
+      --color-text-muted: #94a3b8;
+      --color-highlight: #60a5fa;
+      --gradient-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      --gradient-accent: linear-gradient(135deg, #06b6d4, #3b82f6);
+      --gradient-warm: linear-gradient(135deg, #f59e0b, #ef4444);
+      --glass: rgba(15, 23, 42, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --font-ja: 'Noto Sans JP', sans-serif;
+      --font-en: 'Inter', sans-serif;
+    }
+
+    .reveal-viewport {
+      background: var(--color-bg);
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+    }
+
+    .reveal {
+      font-family: var(--font-ja);
+      color: var(--color-text);
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: var(--font-ja);
+      color: #fff;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .reveal h1 { font-size: 2.2em; font-weight: 900; }
+    .reveal h2 { font-size: 1.5em; font-weight: 700; }
+    .reveal h3 { font-size: 1.1em; font-weight: 600; }
+
+    .reveal .slide-number {
+      font-family: var(--font-en);
+      font-size: 14px;
+      color: var(--color-text-muted);
+      background: transparent;
+      right: 24px;
+      bottom: 16px;
+    }
+
+    .reveal section {
+      text-align: left;
+    }
+
+    /* ─── Utility Classes ─── */
+    .text-center { text-align: center !important; }
+    .text-muted { color: var(--color-text-muted); }
+    .text-accent { color: var(--color-highlight); }
+    .text-small { font-size: 1.1em; }
+    .text-xs { font-size: 1.1em; }
+
+    .gradient-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gradient-text-accent {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gradient-text-warm {
+      background: var(--gradient-warm);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      margin: 12px 0;
+    }
+
+    .card-sm {
+      padding: 16px 20px;
+      border-radius: 12px;
+    }
+
+    .card-glow {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .card-accent {
+      border-left: 3px solid var(--color-accent-1);
+    }
+
+    /* ─── Grid ─── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* ─── Badge ─── */
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 1.1em;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--color-accent-1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .badge-purple {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--color-accent-2);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .badge-cyan {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--color-accent-3);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    /* ─── Stat ─── */
+    .stat-number {
+      font-family: var(--font-en);
+      font-size: 2.8em;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.8em;
+      color: var(--color-text-muted);
+      font-weight: 400;
+    }
+
+    /* ─── List ─── */
+    .reveal ul, .reveal ol {
+      margin-left: 0;
+    }
+
+    .reveal ul.styled-list {
+      list-style: none !important;
+      list-style-type: none !important;
+      padding: 0;
+    }
+    .reveal ul.styled-list li {
+      list-style-type: none !important;
+    }
+
+    .styled-list li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      font-size: 0.8em;
+      color: var(--color-text);
+    }
+
+    .styled-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+    }
+
+    /* ─── Timeline ─── */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-accent-1), var(--color-accent-2), var(--color-accent-3));
+    }
+
+    .timeline-item {
+      line-height: 1.6;
+      position: relative;
+      margin-bottom: 32px;
+      font-size: 1.1em;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-accent-1);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+    }
+
+    .timeline-item .tl-date {
+      font-family: var(--font-en);
+      font-weight: 700;
+      color: var(--color-highlight);
+      font-size: 1.1em;
+    }
+
+    .timeline-item .tl-text {
+      color: var(--color-text);
+      margin-top: 2px;
+    }
+
+    /* ─── Table ─── */
+    .reveal table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 1.1em;
+    }
+
+    .reveal table th {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--color-highlight);
+      font-weight: 600;
+      padding: 4px 10px;
+      text-align: left;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .reveal table td {
+      padding: 2px 10px;
+      line-height: 1.3;
+      border-bottom: 1px solid var(--glass-border);
+      color: var(--color-text);
+    }
+
+    .reveal table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ─── Title Slide ─── */
+    .title-slide {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center !important;
+    }
+
+    .title-slide h1 {
+      font-size: 2em;
+      margin-bottom: 8px;
+    }
+
+    .title-org {
+      font-size: 0.8em;
+      color: var(--color-text-muted);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-top: 20px;
+    }
+
+    .title-venue {
+      font-size: 0.5em;
+      color: var(--color-text-muted);
+      font-weight: 300;
+      margin-top: 8px;
+    }
+
+    /* ─── Sponsor Tier ─── */
+    .tier-card {
+      text-align: center;
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tier-name {
+      font-size: 0.8em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .tier-price {
+      font-family: var(--font-en);
+      font-size: 1.25em;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      font-size: 0.75em;
+      color: var(--color-text-muted);
+      text-align: left;
+      margin-top: auto;
+      padding-left: 8px;
+    }
+
+    .tier-features li {
+      padding: 2px 0;
+      line-height: 1.4;
+    }
+
+    .tier-features li .check {
+      color: #22c55e;
+      margin-right: 4px;
+    }
+
+    /* ─── Image placeholder for real photos ─── */
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ─── Decorative ─── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+      margin: 12px 0 20px 0;
+    }
+
+    .divider-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .icon-blue { background: rgba(59, 130, 246, 0.15); }
+    .icon-purple { background: rgba(139, 92, 246, 0.15); }
+    .icon-cyan { background: rgba(6, 182, 212, 0.15); }
+    .icon-amber { background: rgba(245, 158, 11, 0.15); }
+    .icon-green { background: rgba(34, 197, 94, 0.15); }
+
+    /* ─── Section divider slide ─── */
+    .section-divider {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center !important;
+    }
+
+    .section-divider h2 {
+      font-size: 2em;
+    }
+
+    /* ─── Progress bar top ─── */
+    .reveal .progress {
+      height: 3px;
+      color: var(--color-accent-1);
+    }
+
+    /* ─── Contact ─── */
+    .contact-info {
+      font-size: 1.1em;
+    }
+
+    .contact-info a {
+      color: var(--color-highlight);
+      text-decoration: none;
+    }
+
+    /* ─── Animations ─── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+      50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.4); }
+    }
+
+    .float { animation: float 3s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+    /* ─── Print / PDF ─── */
+    @media print {
+      .reveal-viewport { background: #0a0e1a !important; }
+      .card { break-inside: avoid; }
+    }
+
+    /* ─── Highlight box ─── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.12));
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin: 12px 0;
+    }
+
+    /* ─── Footer branding ─── */
+    .slide-footer {
+      position: absolute;
+      bottom: 16px;
+      left: 32px;
+      font-size: 11px;
+      color: rgba(148, 163, 184, 0.5);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Flow diagram */
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flow-step {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .flow-step.active {
+      border-color: rgba(59,130,246,0.4);
+      background: rgba(59,130,246,0.1);
+    }
+
+    .flow-connector {
+      color: var(--color-accent-1);
+      font-size: 1.2em;
+    }
+
+    /* Budget bar */
+    .budget-bar {
+      height: 28px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      margin: 8px 0;
+    }
+
+    .budget-bar > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5em;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      padding: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================== -->
+      <!-- SLIDE 1: Title -->
+      <!-- ============================== -->
+      <section class="title-slide" data-background-image="assets/drone_show_hero_v2.jpg" data-background-opacity="0.25" data-background-size="cover">
+        <div class="badge badge-cyan">国際ドローン展 2026</div>
+        <h1>
+          学生が<span class="gradient-text">0</span>から創る、<br>
+          <span class="gradient-text">日本初</span>の屋内ドローンショー
+        </h1>
+
+        <div class="highlight-box pulse-glow" style="margin-top: 24px; display: inline-block; padding: 12px 24px; border-radius: 50px; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4);">
+          <span style="font-size: 0.85em; font-weight: 700; color: #fff;">🏆 全日本学生室内飛行ロボットコンテスト 全国4位</span>
+        </div>
+
+        <div class="divider divider-center" style="margin-top:20px;"></div>
+        <div class="title-org">東京理科大学 創域理工学部<br><strong style="color:#fff;font-size:1.15em;">宇宙クラブ</strong></div>
+        <div class="title-venue">SPACE CLUB — Tokyo University of Science</div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 2: Vision -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-blue">Our Vision</div>
+        <h2>なぜ、<span class="gradient-text">「日本初」</span>なのか</h2>
+        <div class="divider"></div>
+
+        <div class="highlight-box" style="text-align:center; margin-bottom:20px;">
+          <span style="font-size:0.85em;">学生が機体を<strong style="color:#fff;">ゼロから設計・製作</strong>し、<br>
+          <strong style="color:#fff;">屋内ドローンショー</strong>として完成させた事例は<br></span>
+          <span class="gradient-text" style="font-size:1.4em;font-weight:800;">日本にまだ存在しません。</span>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-blue">🔧</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;">機体設計</div>
+            <div style="font-size:0.75em;color:var(--color-text-muted);margin-top:4px;">フレームからFC・ESCまで<br>学生が部品選定・組立</div>
+          </div>
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-purple">💻</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;">ソフトウェア</div>
+            <div style="font-size:0.75em;color:var(--color-text-muted);margin-top:4px;">ArduPilotベースの<br>自律飛行ファームウェア開発</div>
+          </div>
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-cyan">✨</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;">ショー演出</div>
+            <div style="font-size:0.75em;color:var(--color-text-muted);margin-top:4px;">群制御・位置推定による<br>3機編隊飛行ショー</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 3: About Us -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-purple">About Us</div>
+        <h2>宇宙クラブとは</h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <p style="font-size:0.75em; line-height:1.8;">
+              東京理科大学 創域理工学部に所属する学生団体。<br>
+              2023年設立以来、航空宇宙分野の知識と実践を通じて<br>
+              <strong style="color:#fff;">次世代のエンジニアを育成</strong>しています。
+            </p>
+
+            <div class="grid-2" style="margin-top:20px; gap:12px;">
+              <div class="card card-sm text-center">
+                <div class="stat-number gradient-text">35</div>
+                <div class="stat-label">実働メンバー</div>
+              </div>
+              <div class="card card-sm text-center">
+                <div class="stat-number gradient-text-accent">6</div>
+                <div class="stat-label">活動班</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-glow">
+            <h3 style="font-size:0.75em; margin-bottom:12px;">チーム構成</h3>
+            <div style="font-size:0.75em; line-height:1.9;">
+              <div style="color:var(--color-highlight);font-weight:600;margin-bottom:4px;">▎ 2年生 — 4班</div>
+              <ul class="styled-list" style="margin-bottom:12px;">
+                <li>固定翼 自動操縦機</li>
+                <li>VTOL機（垂直離着陸）</li>
+                <li>マルチコプター型ドローン</li>
+                <li>ドローンショー開発</li>
+              </ul>
+              <div style="color:var(--color-accent-3);font-weight:600;margin-bottom:4px;">▎ 1年生 — 2班</div>
+              <ul class="styled-list">
+                <li>基礎製作・飛行訓練</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- ============================== -->
+      <!-- SLIDE 4: History / Evolution -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-blue">History</div>
+        <h2>活動の変遷</h2>
+        <div class="divider"></div>
+
+        <div class="grid-2" style="gap: 28px; margin-top: 30px;">
+          <!-- 2023 -->
+          <div class="card card-sm card-glow" style="border-left: 6px solid #3b82f6; padding: 28px 32px; text-align: left;">
+            <div style="font-size: 1.6em; font-weight: 800; color: #3b82f6; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">
+              2023 <span style="font-size:0.5em; color:var(--color-text-muted); font-weight: 600; vertical-align: middle; margin-left: 8px;">設立</span>
+            </div>
+            <div style="font-size: 0.9em; line-height: 1.6; color: var(--color-text);">
+              有翼ロケット研究室の研究支援を目的に発足。<br>
+              <span style="font-size: 0.85em; color:var(--color-text-muted);">地上支援GUI、アビオニクス等の技術開発に参加。</span>
+            </div>
+          </div>
+          
+          <!-- 2024 -->
+          <div class="card card-sm card-glow" style="border-left: 6px solid #8b5cf6; padding: 28px 32px; text-align: left;">
+            <div style="font-size: 1.6em; font-weight: 800; color: #8b5cf6; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">
+              2024 <span style="font-size:0.5em; color:var(--color-text-muted); font-weight: 600; vertical-align: middle; margin-left: 8px;">転換期</span>
+            </div>
+            <div style="font-size: 0.9em; line-height: 1.6; color: var(--color-text);">
+              研究室の移転に伴い、活動方針を大きく転換。<br>
+              <span style="font-size: 0.85em; color:var(--color-text-muted);">室内飛行ロボットコンテスト出場を主軸に変更。</span>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="card card-sm card-glow" style="border-left: 6px solid #06b6d4; padding: 28px 32px; text-align: left;">
+            <div style="font-size: 1.6em; font-weight: 800; color: #06b6d4; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">
+              2025 <span style="font-size:0.5em; color:var(--color-text-muted); font-weight: 600; vertical-align: middle; margin-left: 8px;">実績</span>
+            </div>
+            <div style="font-size: 0.9em; line-height: 1.6; color: var(--color-text);">
+              <strong style="color: #fff; font-size: 1.1em;">ビギナー部門 全国4位</strong>（理科大記録を樹立）<br>
+              <span style="font-size: 0.85em; color:var(--color-text-muted);">一般1チーム、ビギナー3チームが出場。</span>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="card card-sm card-glow" style="border-left: 6px solid #f59e0b; padding: 28px 32px; text-align: left; position: relative; overflow: visible;">
+            <div style="position: absolute; top: -16px; right: -16px; font-size: 2.2em; filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));">🚀</div>
+            <div style="font-size: 1.6em; font-weight: 800; color: #f59e0b; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">
+              2026 <span style="font-size:0.5em; color:var(--color-text-muted); font-weight: 600; vertical-align: middle; margin-left: 8px;">挑戦</span>
+            </div>
+            <div style="font-size: 0.9em; line-height: 1.6; color: var(--color-text);">
+              <strong class="gradient-text" style="font-size: 1.1em;">日本初の学生製ドローンショーに挑戦。</strong><br>
+              <span style="font-size: 0.85em; color:var(--color-text-muted);">6班体制・35名で機体設計から群制御まで開発。</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- ============================== -->
+      <!-- SLIDE 4B: History / Evolution (Timeline Version) -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-blue">History (Timeline)</div>
+        <h2>活動の変遷</h2>
+        <div class="divider"></div>
+
+        <div class="timeline" style="font-size: 0.8em; margin-top: 0px;">
+          <div class="timeline-item" style="margin-bottom: 12px; line-height: 1.3;">
+            <div class="tl-date" style="font-size: 0.95em; margin-bottom: 4px;">2023 — 設立</div>
+            <div class="tl-text" style="font-size: 0.85em; line-height: 1.4;">有翼ロケット研究室（藤川研）の研究支援を目的に宇宙クラブ発足。<br>
+            <span class="text-muted text-small">地上支援GUI開発、アビオニクス、航法誘導制御など幅広い技術に参画。</span></div>
+          </div>
+          <div class="timeline-item" style="margin-bottom: 12px; line-height: 1.3;">
+            <div class="tl-date" style="font-size: 0.95em; margin-bottom: 4px;">2024 — 転換期</div>
+            <div class="tl-text" style="font-size: 0.85em; line-height: 1.4;">研究室の移転に伴い活動方針を転換。<br>
+            <span class="text-muted text-small">全日本学生室内飛行ロボットコンテスト（ヒコロボ）への出場を軸に。</span></div>
+          </div>
+          <div class="timeline-item" style="margin-bottom: 12px; line-height: 1.3;">
+            <div class="tl-date" style="font-size: 0.95em; margin-bottom: 4px;">2025 — 実績</div>
+            <div class="tl-text" style="font-size: 0.85em; line-height: 1.4;"><strong style="color:#fff;">ビギナー部門 全国4位</strong>（東京理科大学記録を樹立）<br>
+            <span class="text-muted text-small">一般部門1チーム、ビギナー部門3チームが出場。</span></div>
+          </div>
+          <div class="timeline-item" style="margin-bottom:0; line-height: 1.4;">
+            <div class="tl-date" style="font-size: 0.95em; margin-bottom: 4px;">2026 — 挑戦</div>
+            <div class="tl-text" style="font-size: 0.85em; line-height: 1.4;"><strong class="gradient-text">日本初の学生製屋内ドローンショーに挑戦。</strong><br>
+            <span class="text-muted text-small">6班体制・35名で機体設計から群制御まで自力開発。</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 5: Contest Achievements -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-amber">Achievements</div>
+        <h2>コンテスト実績</h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <div class="card card-glow" style="text-align:center; margin-bottom:16px;">
+              <div style="font-size:0.75em;color:var(--color-text-muted);margin-bottom:4px;">全日本学生室内飛行ロボットコンテスト</div>
+              <div style="font-size:0.75em;color:var(--color-text-muted);">ビギナー部門</div>
+              <div class="stat-number gradient-text-warm" style="font-size:3em;margin:8px 0;">4<span style="font-size:0.4em;">位</span></div>
+              <div style="font-size:0.8em;color:#f59e0b;font-weight:600;">東京理科大学 歴代最高記録</div>
+            </div>
+
+            <div class="card card-sm">
+              <div style="font-size:0.75em;">
+                <div style="color:var(--color-highlight);font-weight:600;margin-bottom:6px;">出場実績</div>
+                一般部門 1チーム + ビギナー部門 3チーム
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-sm" style="margin-bottom:12px;">
+              <h3 style="font-size:0.8em;margin-bottom:8px;">大会ミッション例</h3>
+              <ul class="styled-list" style="font-size:1.0em; line-height:1.6;">
+                <li style="margin-bottom:8px;">滑走路内離陸</li>
+                <li style="margin-bottom:8px;">救援物資投下（メインミッション）</li>
+                <li style="margin-bottom:8px;">機体重量 350g以下 / 自作制御装置</li>
+                <li style="margin-bottom:8px;">宙返り・水平旋回</li>
+                <li style="margin-bottom:8px;">ハンズオフ飛行（自律）</li>
+              </ul>
+            </div>
+
+            <div class="card card-sm">
+              <h3 style="font-size:0.8em;margin-bottom:8px;">2026年度の出場計画</h3>
+              <div style="font-size:0.75em; line-height:1.7;">
+                マルチコプター部門 ドローン出場<br>
+                一般部門 3チーム<br>
+                <strong style="color:var(--color-highlight);">自動操縦班 1チーム</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 6: Technical Capabilities -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-cyan">Technology</div>
+        <h2>技術力 — <span class="gradient-text-accent">ハードウェア設計</span></h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <div class="card card-sm card-accent" style="margin-bottom:12px;">
+              <div style="font-size:0.8em;color:var(--color-highlight);font-weight:600;margin-bottom:6px;">✅ 機体完成済み</div>
+              <div style="font-size:0.75em;line-height:1.7;">
+                学生が選定・設計した自作ドローン機体は<br>
+                <strong style="color:#22c55e;">すでに完成しています。</strong>
+              </div>
+            </div>
+
+            <table style="font-size:0.9em;">
+              <thead>
+                <tr><th>コンポーネント</th><th>型番</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>FC</td><td>Kakute H7</td></tr>
+                <tr><td>ESC</td><td>HAKRC 4in1 15A/25A</td></tr>
+                <tr><td>モーター</td><td>MT2204 2300KV</td></tr>
+                <tr><td>プロペラ</td><td>5" / 3" ピッチ</td></tr>
+                <tr><td>バッテリー</td><td>2S 850mAh</td></tr>
+                <tr><td>受信機</td><td>Futaba R2000SBM</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <div class="photo-placeholder" style="margin-bottom:14px;">
+              <img src="assets/drone_closeup.png" alt="自作ドローン機体">
+            </div>
+            <div class="card card-sm" style="font-size:0.8em;text-align:center;color:var(--color-text-muted);">
+              <!-- TODO: 実際の機体写真に差し替え -->
+              ※ 実際の完成機体写真をご用意いただけると差し替えます
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 7: Software & Control -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-purple">Technology</div>
+        <h2>技術力 — <span class="gradient-text">ソフトウェア＆制御</span></h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <div class="card card-sm" style="margin-bottom:12px;">
+              <div style="font-size:0.75em;color:var(--color-accent-2);font-weight:600;margin-bottom:8px;">🧠 PID制御の実装</div>
+              <div style="font-size:0.8em;line-height:1.7;color:var(--color-text-muted);">
+                P（比例）・I（積分）・D（微分）の3要素を<br>
+                組み合わせた姿勢制御アルゴリズムを<br>
+                学生自身が理解・実装しています。
+              </div>
+            </div>
+            <div class="card card-sm">
+              <div style="font-size:0.75em;color:var(--color-accent-1);font-weight:600;margin-bottom:8px;">🛠️ ArduPilot ファームウェア</div>
+              <div style="font-size:0.8em;line-height:1.7;color:var(--color-text-muted);">
+                オープンソースのフライトコントローラー<br>
+                ArduPilotをベースに開発。<br>
+                Ubuntu仮想環境でビルド・書き込みを実施。<br>
+                複数機同時シミュレーション環境も構築。
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-sm" style="margin-bottom:12px;">
+              <div style="font-size:0.75em;color:var(--color-accent-3);font-weight:600;margin-bottom:8px;">📍 位置推定 — オプティカルフロー</div>
+              <div style="font-size:0.8em;line-height:1.7;color:var(--color-text-muted);">
+                LiDAR付きオプティカルフローセンサーを使用し、<br>
+                GPS不要の屋内位置推定を実装予定。<br>
+                <strong style="color:#fff;">外部インフラ不要</strong>で<br>
+                コストパフォーマンスに優れた方式を採用。
+              </div>
+            </div>
+
+            <div class="highlight-box" style="text-align:center;">
+              <div style="font-size:0.8em;color:var(--color-text-muted);margin-bottom:8px;">位置推定方式の比較検討</div>
+              <div class="flow-arrow">
+                <div class="flow-step">
+                  <div style="font-size:0.8em;">Motion Capture</div>
+                  <div style="font-size:0.75em;color:var(--color-text-muted);">¥100万超</div>
+                </div>
+                <div class="flow-step">
+                  <div style="font-size:0.8em;">UWB</div>
+                  <div style="font-size:0.75em;color:var(--color-text-muted);">¥5万〜</div>
+                </div>
+                <div class="flow-step">
+                  <div style="font-size:0.8em;">Visual SLAM</div>
+                  <div style="font-size:0.75em;color:var(--color-text-muted);">¥20万</div>
+                </div>
+                <div class="flow-step active" style="border-color:rgba(34,197,94,0.5);background:rgba(34,197,94,0.1);">
+                  <div style="font-size:0.8em;color:#22c55e;font-weight:700;">Optical Flow</div>
+                  <div style="font-size:0.75em;color:var(--color-text-muted);">採用 ✓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 8: Drone Show Plan -->
+      <!-- ============================== -->
+      <section data-background-image="assets/drone_show_hero_v2.jpg" data-background-opacity="0.15" data-background-size="cover">
+        <div class="badge badge-cyan">Drone Show</div>
+        <h2>屋内ドローンショー計画</h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <div class="card card-glow" style="margin-bottom:14px;">
+              <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:10px;">🎪 理大祭 2026（11月）で実演</div>
+              <div style="font-size:0.75em;line-height:1.8;color:var(--color-text);">
+                東京理科大学の学園祭にて、<br>
+                <strong style="color:var(--color-highlight);">3機のドローン</strong>による<br>
+                屋内編隊飛行ショーを実演します。
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap:10px;">
+              <div class="card card-sm text-center">
+                <div class="stat-number gradient-text-accent" style="font-size:2em;">3</div>
+                <div class="stat-label">飛行機体数</div>
+              </div>
+              <div class="card card-sm text-center">
+                <div class="stat-number gradient-text" style="font-size:2em;">屋内</div>
+                <div class="stat-label">GPS不使用</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-sm">
+              <div style="font-size:0.75em;font-weight:600;color:#fff;margin-bottom:10px;">実現する技術要素</div>
+              <ul class="styled-list" style="font-size:1.0em; line-height:1.6;">
+                <li>オプティカルフロー＋LiDARによる位置推定</li>
+                <li>自律飛行制御（ArduPilotベース）</li>
+                <li>複数機の群制御・衝突回避</li>
+                <li>LED演出との連動</li>
+                <li>安全なプロペラガード装備</li>
+              </ul>
+            </div>
+
+            <div class="highlight-box" style="margin-top:12px;">
+              <div style="font-size:0.8em;text-align:center;">
+                <span style="color:var(--color-text-muted);">学生が機体をゼロから開発し</span><br>
+                <span style="color:var(--color-text-muted);">ドローンショーとして完成させたのは</span><br>
+                <span class="gradient-text" style="font-weight:700;font-size:1.3em;">日本で前例がありません</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 9: Safety -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-amber">Safety</div>
+        <h2>安全管理体制</h2>
+        <div class="divider"></div>
+
+        <div class="grid-3">
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-green">🛡️</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:6px;">機体安全</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>プロペラガード全機装着</li>
+              <li>350g以下の軽量設計</li>
+              <li>フェイルセーフ機能搭載</li>
+            </ul>
+          </div>
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-blue">📋</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:6px;">運用安全</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>飛行エリアのネット設置</li>
+              <li>観客との十分な距離確保</li>
+              <li>事前の飛行テスト実施</li>
+            </ul>
+          </div>
+          <div class="card card-sm text-center">
+            <div class="icon-circle icon-purple">📜</div>
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:6px;">法令遵守</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>屋内飛行のため航空法対象外</li>
+              <li>大学施設管理者との協議</li>
+              <li>保険加入の検討</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:18px; text-align:center;">
+          <div style="font-size:0.75em;">
+            全日本学生室内飛行ロボットコンテストで培った<strong style="color:#fff;">室内飛行の安全管理ノウハウ</strong>を活用
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 10: Section - Sponsorship -->
+      <!-- ============================== -->
+      <section class="section-divider">
+        <div class="badge badge-blue">Partnership</div>
+        <h2><span class="gradient-text">スポンサーシップのご提案</span></h2>
+        <div class="divider divider-center"></div>
+        <p style="font-size:0.8em; color:var(--color-text-muted); text-align:center;">
+          次世代エンジニアの挑戦を、一緒に支えてください。
+        </p>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 11: Why Sponsor Us -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-blue">Value</div>
+        <h2>なぜ宇宙クラブを<span class="gradient-text">支援すべきか</span></h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div class="card card-sm card-glow" style="margin-bottom:0;">
+            <div class="icon-circle icon-blue" style="width:36px;height:36px;font-size:18px;margin-bottom:4px;">🎓</div>
+            <div style="font-size:0.75em;font-weight:600;color:#fff;margin-bottom:4px;">次世代エンジニア育成</div>
+            <div style="font-size:0.8em;color:var(--color-text-muted);line-height:1.7;">
+              35名の理工系学生が、ハードウェア設計から<br>
+              ソフトウェア制御まで<strong style="color:#fff;">実践的に学ぶ場</strong>。<br>
+              御社の将来のリクルーティングにも直結します。
+            </div>
+          </div>
+          <div class="card card-sm card-glow" style="margin-bottom:0;">
+            <div class="icon-circle icon-purple" style="width:36px;height:36px;font-size:18px;margin-bottom:4px;">🚀</div>
+            <div style="font-size:0.75em;font-weight:600;color:#fff;margin-bottom:4px;">日本初の技術的挑戦</div>
+            <div style="font-size:0.8em;color:var(--color-text-muted);line-height:1.7;">
+              学生が一から機体を開発しドローンショーを<br>
+              実現した前例は国内にありません。<br>
+              <strong style="color:#fff;">先進的なブランドイメージ</strong>を訴求できます。
+            </div>
+          </div>
+          <div class="card card-sm card-glow" style="margin-bottom:0;">
+            <div class="icon-circle icon-cyan" style="width:36px;height:36px;font-size:18px;margin-bottom:4px;">📰</div>
+            <div style="font-size:0.75em;font-weight:600;color:#fff;margin-bottom:4px;">メディア露出</div>
+            <div style="font-size:0.8em;color:var(--color-text-muted);line-height:1.7;">
+              「日本初」のストーリーはメディア注目度が高く、<br>
+              協賛企業としての<strong style="color:#fff;">PR効果</strong>が期待できます。<br>
+              理大祭の来場者数にもリーチ。
+            </div>
+          </div>
+          <div class="card card-sm card-glow" style="margin-bottom:0;">
+            <div class="icon-circle icon-amber" style="width:36px;height:36px;font-size:18px;margin-bottom:4px;">🤝</div>
+            <div style="font-size:0.75em;font-weight:600;color:#fff;margin-bottom:4px;">産学連携</div>
+            <div style="font-size:0.8em;color:var(--color-text-muted);line-height:1.7;">
+              ドローン技術のR&D分野で、<br>
+              学生の新鮮なアイデアとの<strong style="color:#fff;">共同開発</strong>や<br>
+              技術交流のきっかけにご活用ください。
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- ============================== -->
+      <!-- SLIDE 12: Budget Breakdown -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-amber">Budget</div>
+        <h2>必要資金の内訳</h2>
+        <div class="divider"></div>
+
+        <div class="card card-glow text-center" style="padding: 24px; margin-bottom: 40px; margin-top: 20px;">
+          <div style="font-size:0.8em; color:var(--color-text-muted);">年間必要予算（3機分・概算）</div>
+          <div class="stat-number gradient-text-warm" style="font-size:3.5em; margin: 4px 0;">¥200,000</div>
+        </div>
+
+        <div class="grid-4" style="gap: 20px;">
+          <!-- Item 1 -->
+          <div class="card card-sm card-accent" style="border-left-color: #3b82f6; padding: 20px;">
+            <div style="font-size:0.75em; color:var(--color-text-muted);">40%</div>
+            <div style="font-size:1.2em; font-weight:700; color:#fff; margin-bottom:8px;">¥80,000</div>
+            <div style="font-size:0.85em; font-weight:600; color:var(--color-highlight); margin-bottom:8px;">機体パーツ</div>
+            <div style="font-size:0.65em; line-height:1.6; color:var(--color-text);">FC、ESC、モーター<br>プロペラ、バッテリー</div>
+          </div>
+          
+          <!-- Item 2 -->
+          <div class="card card-sm card-accent" style="border-left-color: #8b5cf6; padding: 20px;">
+            <div style="font-size:0.75em; color:var(--color-text-muted);">25%</div>
+            <div style="font-size:1.2em; font-weight:700; color:#fff; margin-bottom:8px;">¥50,000</div>
+            <div style="font-size:0.85em; font-weight:600; color:var(--color-accent-2); margin-bottom:8px;">位置推定センサー</div>
+            <div style="font-size:0.65em; line-height:1.6; color:var(--color-text);">オプティカルフロー<br>+ LiDAR × 3機分</div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="card card-sm card-accent" style="border-left-color: #06b6d4; padding: 20px;">
+            <div style="font-size:0.75em; color:var(--color-text-muted);">20%</div>
+            <div style="font-size:1.2em; font-weight:700; color:#fff; margin-bottom:8px;">¥40,000</div>
+            <div style="font-size:0.85em; font-weight:600; color:var(--color-accent-3); margin-bottom:8px;">通信機器</div>
+            <div style="font-size:0.65em; line-height:1.6; color:var(--color-text);">送受信機<br>Raspberry Pi等</div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="card card-sm card-accent" style="border-left-color: #f59e0b; padding: 20px;">
+            <div style="font-size:0.75em; color:var(--color-text-muted);">15%</div>
+            <div style="font-size:1.2em; font-weight:700; color:#fff; margin-bottom:8px;">¥30,000</div>
+            <div style="font-size:0.85em; font-weight:600; color:#f59e0b; margin-bottom:8px;">予備費・その他</div>
+            <div style="font-size:0.65em; line-height:1.6; color:var(--color-text);">予備パーツ、配線材<br>資料印刷・交通費</div>
+          </div>
+        </div>
+      </section>
+
+            <!-- ============================== -->
+      <!-- SLIDE 13: Sponsorship Plans -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-purple">Support Plans</div>
+        <h2>ご支援プラン</h2>
+        <div class="divider"></div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
+          <!-- SILVER -->
+          <div class="card" style="display: flex; align-items: center; padding: 24px 30px; border-left: 8px solid #94a3b8; background: linear-gradient(90deg, rgba(148, 163, 184, 0.05), transparent);">
+            <div style="width: 35%; text-align: left;">
+              <div style="color: #94a3b8; font-weight: 800; font-size: 1.1em; letter-spacing: 0.1em; margin-bottom: 4px;">SILVER</div>
+              <div style="font-family: var(--font-en); font-size: 1.8em; font-weight: 800; line-height: 1;">¥30,000<span style="font-size: 0.5em; font-weight: 400;">〜</span></div>
+            </div>
+            <div style="width: 65%; text-align: left; padding-left: 30px; border-left: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0; font-size: 0.85em; line-height: 1.7;">
+                SNS等でのロゴ掲載 ・ 活動報告書の共有 ・ 理大祭へのご招待
+              </p>
+            </div>
+          </div>
+
+          <!-- GOLD -->
+          <div class="card card-glow" style="display: flex; align-items: center; padding: 24px 30px; border-left: 8px solid #f59e0b; background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent);">
+            <div style="width: 35%; text-align: left;">
+              <div style="color: #f59e0b; font-weight: 800; font-size: 1.1em; letter-spacing: 0.1em; margin-bottom: 4px;">GOLD</div>
+              <div style="font-family: var(--font-en); font-size: 1.8em; font-weight: 800; line-height: 1; color: #f59e0b;">¥70,000<span style="font-size: 0.5em; font-weight: 400; color:var(--color-text);">〜</span></div>
+            </div>
+            <div style="width: 65%; text-align: left; padding-left: 30px; border-left: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0; font-size: 0.85em; line-height: 1.7;">
+                <strong style="color: #f59e0b;">Silverの全特典</strong> ＋ 機体へのロゴ掲載 ・ 技術レポート共有 ・ ドローンショー当日VIP席
+              </p>
+            </div>
+          </div>
+
+          <!-- PLATINUM -->
+          <div class="card pulse-glow" style="display: flex; align-items: center; padding: 24px 30px; border-left: 8px solid #3b82f6; background: linear-gradient(90deg, rgba(59, 130, 246, 0.08), transparent);">
+            <div style="width: 35%; text-align: left;">
+              <div class="gradient-text" style="font-weight: 800; font-size: 1.1em; letter-spacing: 0.1em; margin-bottom: 4px;">PLATINUM</div>
+              <div class="gradient-text" style="font-family: var(--font-en); font-size: 1.8em; font-weight: 800; line-height: 1;">¥100,000<span style="font-size: 0.5em; font-weight: 400; color:var(--color-text);">〜</span></div>
+            </div>
+            <div style="width: 65%; text-align: left; padding-left: 30px; border-left: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0; font-size: 0.85em; line-height: 1.7;">
+                <strong class="gradient-text">Goldの全特典</strong> ＋ ショー冠スポンサー ・ 技術交流会招待 ・ メディア発信時の連名 ・ 採用活動のご支援
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:20px; text-align:center;">
+          <div style="font-size:0.8em;">
+            💡 <strong style="color:#fff;">物資支援も歓迎します</strong> — パーツ提供・工具貸与・技術指導など、資金以外のご支援もぜひご相談ください。
+          </div>
+        </div>
+      </section>
+
+<!-- ============================== -->
+      <!-- SLIDE 14: Returns for Sponsors -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-cyan">Returns</div>
+        <h2>ご支援企業への<span class="gradient-text-accent">リターン</span></h2>
+        <div class="divider"></div>
+
+        <div class="grid-2" style="gap:14px;">
+          <div class="card card-sm" style="margin-bottom:8px;">
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:8px;">🏷️ ブランド露出</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>ドローン機体への企業ロゴ掲載</li>
+              <li>理大祭の展示ブースでのロゴ表示</li>
+              <li>SNS・Webサイトでの協賛企業紹介</li>
+              <li>プレゼン資料・配布物への掲載</li>
+            </ul>
+          </div>
+          <div class="card card-sm" style="margin-bottom:8px;">
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:8px;">📊 技術情報</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>定期活動報告書（月次）</li>
+              <li>技術レポート（設計・制御・成果）</li>
+              <li>コンテスト成績報告</li>
+              <li>ドローンショー映像の提供</li>
+            </ul>
+          </div>
+          <div class="card card-sm">
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:8px;">🎟️ イベント</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>理大祭ドローンショーへの優先招待</li>
+              <li>技術交流会・ワークショップの開催</li>
+              <li>大会観戦・応援参加の機会</li>
+            </ul>
+          </div>
+          <div class="card card-sm">
+            <div style="font-size:0.8em;font-weight:600;color:#fff;margin-bottom:8px;">👥 リクルーティング</div>
+            <ul class="styled-list" style="font-size:0.95em; line-height:1.8;">
+              <li>35名の理工系人材との接点</li>
+              <li>企業説明会・インターン紹介の場</li>
+              <li>共同プロジェクトを通じた人材発掘</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+                  <!-- ============================== -->
+      <!-- SLIDE 15: Roadmap -->
+      <!-- ============================== -->
+      <section>
+        <div class="badge badge-blue">Roadmap</div>
+        <h2>2026年度 開発ロードマップ</h2>
+        <div class="divider"></div>
+
+        <div class="grid-2" style="gap: 40px; margin-top: 20px;">
+          <!-- Phase 1 -->
+          <div class="card card-glow" style="padding: 28px 36px;">
+            <div class="badge badge-amber" style="font-size: 0.75em; margin-bottom: 20px;">Phase 1: 〜9月</div>
+            <h3 style="font-size: 1.1em; color: var(--color-highlight); margin-bottom: 24px;">飛行ロボットコンテスト</h3>
+            <ul class="styled-list" style="font-size: 0.95em; line-height: 1.8;">
+              <li style="margin-bottom: 12px;">国際ドローン展での協賛活動（7月）</li>
+              <li style="margin-bottom: 12px;">大会出場に向けた機体の製作</li>
+              <li style="margin-bottom: 12px;"><strong style="color: #fff; font-size: 1.05em;">自動飛行プログラムの実装・テスト</strong></li>
+            </ul>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="card card-glow" style="padding: 28px 36px;">
+            <div class="badge badge-purple" style="font-size: 0.75em; margin-bottom: 20px;">Phase 2: 10月〜11月</div>
+            <h3 style="font-size: 1.1em; color: var(--color-accent-2); margin-bottom: 24px;">屋内ドローンショーの実現</h3>
+            <ul class="styled-list" style="font-size: 0.95em; line-height: 1.8;">
+              <li style="margin-bottom: 12px;">複数ドローンによる群制御の開発</li>
+              <li style="margin-bottom: 12px;">屋内環境での編隊飛行リハーサル</li>
+              <li style="margin-bottom: 12px;"><strong style="color: #fff; font-size: 1.05em;">11月 理大祭でのドローンショー本番 🎪</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card-sm card-accent" style="margin-top: 24px; padding: 20px 32px; text-align: center;">
+          <div style="font-size: 0.95em; line-height: 1.7;">
+            <strong style="color:var(--color-highlight);">効率的な開発サイクル：</strong><br>
+            大会向けに開発した<strong style="color:#fff;">「自動飛行技術」</strong>を、そのまま11月のドローンショーに直結させます。
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- SLIDE 16: Contact -->
+      <!-- ============================== -->
+      <section class="title-slide" data-background-image="assets/drone_show_hero_v2.jpg" data-background-opacity="0.15" data-background-size="cover">
+        <h2 style="font-size:1.6em;">
+          <span class="gradient-text">ご支援のご検討</span>を<br>お願いいたします
+        </h2>
+        <div class="divider divider-center"></div>
+
+        <div class="card card-glow" style="max-width:500px; margin:20px auto; text-align:center;">
+          <div style="font-size:0.8em;color:var(--color-text-muted);margin-bottom:8px;">お問い合わせ</div>
+          <div style="font-size:0.85em;font-weight:600;color:#fff;margin-bottom:4px;">
+            東京理科大学 創域理工学部 宇宙クラブ
+          </div>
+          <div style="font-size:0.8em;color:var(--color-text);margin-bottom:8px;">
+            ドローンチーム代表
+          </div>
+          <div style="font-size:0.9em;font-weight:700;color:#fff;margin-bottom:12px;">
+            森 友志
+          </div>
+          <div style="font-size:0.75em;">
+            <span style="color:var(--color-highlight);">✉</span>
+            <a href="mailto:7525129@ed.tus.ac.jp" style="color:var(--color-highlight);text-decoration:none;">
+              7525129@ed.tus.ac.jp
+            </a>
+          </div>
+        </div>
+
+        <div style="font-size:0.5em;color:var(--color-text-muted);margin-top:20px;">
+          SPACE CLUB — Tokyo University of Science<br>
+          Creating the future of drone technology
+        </div>
+      </section>
+
+    </div><!-- /slides -->
+  </div><!-- /reveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      width: 1280,
+      height: 720,
+      margin: 0.08,
+      center: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      pdfSeparateFragments: false,
+    });
+  </script>
+</body>
+</html>

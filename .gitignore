@@ -1,0 +1,12 @@
+# Python scripts used for automation
+*.py
+__pycache__/
+
+# Zip archives
+*.zip
+
+# Generated PPTX (optional: you can remove this if you want to host the PPTX too)
+# *.pptx
+
+# Temporary extraction folders
+pptx_extract/
